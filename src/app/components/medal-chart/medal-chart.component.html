@@ -1,0 +1,24 @@
+<div class="mt-10 flex flex-col gap-4 w-full items-center">
+  <div class="bg-[#29848E] rounded-lg w-fit px-2 py-1">
+    <p class="text-white">Medals per Country</p>
+  </div>
+  <div class="flex gap-8">
+    <div class="border-[#29848E] flex flex-col items-center border-2 rounded-lg p-1">
+      <p class="font-light text-sm md:text-base">Number of JOs</p>
+      <p class="font-bold">{{ numberOfJOs }}</p>
+    </div>
+    <div class="border-[#29848E] flex flex-col items-center border-2 rounded-lg p-1">
+      <p class="font-light text-sm md:text-base">Number of countries</p>
+      <p class="font-bold">{{ numberOfCountries }}</p>
+    </div>
+  </div>
+    <ngx-charts-pie-chart
+      [view]="view"
+      [results]="data"
+      [legend]="showLegend"
+      [labels]="showLabels"
+      [doughnut]="isDoughnut"
+      [legendPosition]="legendPosition"
+      (select)="onCountrySelect($event)"
+    />
+</div>
