@@ -61,6 +61,7 @@ export class CountryDetailComponent implements OnInit {
           ];
         } else {
           console.warn(`Le pays suivant n'a pas été trouvé : ${this.countryName}`);
+          this.router.navigate(['/country-detail']);
         }
       }
     });
